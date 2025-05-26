@@ -100,3 +100,27 @@ RESULT:
 | "Lexmark International, Inc."           | 132012.00              | 
 | "Daikin Industries, Ltd."               | 105600.00              | 
 
+
+
+### 6️⃣ Trend of Carbon Footprints (PCFs) Over the Year
+
+Evaluate the historical trend of carbon emissions:
+```SQL
+SELECT year, 
+       ROUND(SUM(carbon_footprint_pcf), 2) AS total_carbon_emissions
+FROM product_emissions
+GROUP BY year
+ORDER BY year ASC;
+```
+
+RESULT:
+| year | total_carbon_emissions | 
+| ---: | ---------------------: | 
+| 2013 | 503857.00              | 
+| 2014 | 624226.00              | 
+| 2015 | 10840415.00            | 
+| 2016 | 1640182.00             | 
+| 2017 | 340271.00              | 
+
+### Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
+
